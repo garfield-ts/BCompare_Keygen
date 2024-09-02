@@ -11,7 +11,10 @@
 ```
 ++11Ik:7EFlNLs6Yqc3p-LtUOXBElimekQm8e3BTSeGhxhlpmVDeVVrrUAkLTXpZ7mK6jAPAOhyHiokPtYfmokklPELfOxt1s5HJmAnl-5r8YEvsQXY8-dm6EFwYJlXgWOCutNn2+FsvA7EXvM-2xZ1MW8LiGeYuXCA6Yt2wTuU4YWM+ZUBkIGEs1QRNRYIeGB9GB9YsS8U2-Z3uunZPgnA5pF+E8BRwYz9ZE--VFeKCPamspG7tdvjA3AJNRNrCVmJvwq5SqgEQwINdcmwwjmc4JetVK76og5A5sPOIXSwOjlYK+Sm8rvlJZoxh0XFfyioHz48JV3vXbBKjgAlPAc7Npn+wk
 ```
+<img src="asserts/01.png" alt="image-20240902170702727" style="zoom:50%;" /> 
+
 ## 生成注册密钥
+
 ```shell
 git clone https://github.com/garfield-ts/BCompare_Keygen.git
 cd BCompare_Keygen
@@ -33,5 +36,22 @@ Company: SZTS
 Max users: 1
 ```
 可以修改 `keygen.py` 中的相关参数，自定义注册密钥的信息
+
+<img src="asserts/02.png" alt="image-20240902171032478" style="zoom:50%;" /> 
+
 ## 使用密钥进行注册
-打开 BCompare 的注册界面，粘贴生成的注册密钥即可激活。
+打开 Beyond Compare 5，此时会弹出 `评估模式错误` 的提示，点击 `输入密钥` 按钮进入注册页面：
+
+<img src="asserts/03.png" alt="image-20240902172200651" style="zoom:50%;" /> 
+
+将脚本生成的注册密钥粘贴到输入框中，点击 `确定` 即可激活。
+
+<img src="/Users/charles/Documents/GitHub/BCompare_Keygen/asserts/04.png" alt="image-20240902172404873" style="zoom:40%;" /> 
+
+<img src="asserts/05.png" alt="image-20240902172829613" style="zoom:50%;" /> 
+
+## TODO
+
+- 命令行方式支持参数传入
+- 集成二进制文件 patch 功能
+- ……
