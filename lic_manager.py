@@ -1,5 +1,5 @@
 import os
-import random
+import re
 import base58
 from typing import Literal
 from Crypto.Util.number import bytes_to_long
@@ -29,20 +29,25 @@ def gen_padding_lic(data: bytes) -> bytes:
     return ret
 
 
+def check_serial(serial: str) -> bool:
+    pattern = r'^[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}$'
+    match = re.match(pattern, serial)
+    return bool(match)
+
+
 class LicenseEncoder:
     username: str
     atsite: str
     user_num: int
-    serial_num: (int, int)
+    serial_num: str
     license_type: LicType
 
-    def __init__(self, username: str = "Test", atsite: str = "Home", user_num: int = 1, serial_num=(0, 0),
+    def __init__(self, username: str = "Test", atsite: str = "Home", user_num: int = 1, serial_num='Abcd-Efgh',
                  lic_type: LicType = LicType.ALL):
         self.username = username
         self.atsite = atsite
         self.user_num = user_num
-        self.serial_num = (serial_num[0] if serial_num[0] != 0 else random.randint(1000, 10000),
-                           serial_num[1] if serial_num[1] != 0 else random.randint(1000, 10000))
+        self.serial_num = serial_num if check_serial(serial_num) else 'Abcd-Efgh'
         self.license_type = lic_type
 
     def gen_lic(self):
@@ -63,7 +68,7 @@ class LicenseEncoder:
         # 生成授权数据的[随机数]部分
         lic += os.urandom(5)
         lic += b'\x09'
-        lic += str(self.serial_num[0]).zfill(4).encode() + b'-' + str(self.serial_num[1]).zfill(4).encode()
+        lic += self.serial_num.encode()
         lic += gen_padding_lic(b'0')
         lic += gen_padding_lic(b'30')
         lic += gen_padding_lic(b'15')
@@ -143,9 +148,11 @@ class LicenseDecoder:
         version = self.dec_version()
         rand, serial_num = self.dec_random()
         username = self.dec_uname()
+        print('--- Begin Decode Information ---')
         print(f"Version: {version}")
         print(f"Serial: {serial_num}")
         print(f"Username: {username}")
         print(f"Company: {atsite}")
         print(f"Max users: {num}")
         print(f"Random: {rand}")
+        print('--- End Decode Information ---')
