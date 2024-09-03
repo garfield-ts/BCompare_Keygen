@@ -24,20 +24,20 @@ python3 keygen.py
 得到可用的注册密钥：
 ```
 --- BEGIN LICENSE KEY ---
-3vnA64wCZXBWEmcf56tJXEQSeKhxALVrQrgJBucpS58gQsjXWY7AdKV2bsdaDrDbrwgrD5gZQu4dKiCwCNEbjBGeW7GDpmY4hA78mBGGnqzzprnB4C4Zx716W3GDfmJxkVHdnTREHoApZ4qLCRFuibsQTRfYkaiqJR25p8E2s54vZ2eWz23JPmX8mUAfR3LB6QpYUy9HDMLnRDrQEur123PxDfjWLgFsE3e2YGnqfTXispRFkcYhGAdT6ZztV1fA35SAnoh8CaQr3ff55eddYgeUmE2MDqD5QVSa7aYEsBnc7JqHeG7xppGZPCuCgPpyizqe7hvZNnWsErupC8qe4t6A6unptF
+7uo7UY8gVANuMyCkDtSZRnNBkDXr1o4msYwtu7GFPaZ9B6naWXfsqEBgD5hM8jm3Sw2L4oFHY53VchaHv4j3q4QNiNxPgcv3qz89nKu3VSgQDVpPrAUWKgkjko5Gvck7BBBJmnKbGZJtDTi21WnJ5AMm7upD6QXgbf2BUS7toxB7jzhFLyotDj59KMGkgXMBXeUoa6T7Yt76MZN6UcHqYG5fMLuBp1JfGxpMXE7AMeUXXLwvAxsJGMkC5oS93WoVLopUoBW4SYNpS7YzzirkqZdRt58TbQpqcvwFeD32X2ZamVAv9SjeQUQhyEwktExFwTc541HrJeDV2xqfr4EgbUprSWEu8p
 --- END LICENSE KEY -----
 ```
 默认生成的注册密钥使用以下信息：
 ```
 Version: 0x3d
-Serial: 0666-8888
-Username: Garfield
-Company: SZTS
+Serial: Abcd-Efgh
+Username: Test
+Company: Home
 Max users: 1
 ```
-可以修改 `keygen.py` 中的相关参数，自定义注册密钥的信息
+可以通过传入相关参数，自定义注册密钥的信息
 
-<img src="asserts/02.png" alt="image-20240902171032478" style="zoom:50%;" /> 
+<img src="asserts/06.png" alt="image-20240903162908919" style="zoom:50%;" /> 
 
 ## 使用密钥进行注册
 打开 Beyond Compare 5，此时会弹出 `评估模式错误` 的提示，点击 `输入密钥` 按钮进入注册页面：
@@ -52,6 +52,5 @@ Max users: 1
 
 ## TODO
 
-- 命令行方式支持参数传入
 - 集成二进制文件 patch 功能
 - ……
